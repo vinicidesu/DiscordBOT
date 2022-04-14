@@ -1,4 +1,5 @@
 ﻿using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 using System;
 using System.IO;
@@ -18,7 +19,7 @@ namespace DiscordBOT
 
 
 			//Configurar o Token.TXT para autenticação do BOT.
-			var token = File.ReadAllText("token.txt");
+			var token = File.ReadAllText(@"C:\Users\vinic\source\repos\DiscordBOT\token.txt");
 
 			await _client.LoginAsync(TokenType.Bot, token);
 			await _client.StartAsync();
@@ -31,5 +32,11 @@ namespace DiscordBOT
 			Console.WriteLine(msg.ToString());
 			return Task.CompletedTask;
         }
+
+		[Command("spawner")]
+		public async Task Spawn() 
+		{
+
+		}
 	}
 }
